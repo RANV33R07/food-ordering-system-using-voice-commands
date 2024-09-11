@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #ff4d4d;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.btn-pink {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 10px;
+}

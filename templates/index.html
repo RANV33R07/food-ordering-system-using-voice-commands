@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="bg-danger text-white text-center p-3">
+        <h1>Discover restaurants and order food online using a virtual assistant</h1>
+    </header>
+    <div class="container mt-4">
+        <h3>Restaurants nearby your address</h3>
+        <div class="row">
+            {% for name, items in restaurants.items() %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/static/images/{{ name | lower | replace(' ', '_') }}.jpg" class="card-img-top" alt="{{ name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ name }}</h5>
+                        <p class="card-text">{{ items | join(', ') }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <button class="btn btn-pink fixed-bottom m-3" onclick="openChatbot()">Talk to our virtual assistant</button>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
